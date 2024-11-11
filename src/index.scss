@@ -1,0 +1,37 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+.img-card-admin {
+    width: 10rem;
+    height: 13rem;
+}
+
+.img-card-menu {
+    width: 10rem;
+    height: 10rem;
+}
+
+.btn-perso {
+    background-color: transparent;
+    color: #000000;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.icon-download {
+    width: 40px;
+}
+
+.icon-download:hover {
+    cursor: pointer;
+}
+
+//hover btn_perso
+.btn-perso:hover {
+    color: #000000;
+    text-decoration: underline;
+}

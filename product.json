@@ -1,0 +1,18 @@
+{
+    "id": "1000000",
+    "name": "Switch",
+    "brand": "Nintendo",
+    "description": "Consola Nintendo Switch",
+    "image": "",
+    "stock": "10",
+    "unitPrice": "100",
+    "size": "Unica",
+    "category": {
+      "name": "",
+      "id": "3"
+    },
+    "subCategory": {
+      "name": "",
+      "id": "5"
+    }
+  }
