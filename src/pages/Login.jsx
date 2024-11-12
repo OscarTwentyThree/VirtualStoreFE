@@ -43,7 +43,7 @@ export const Login = () => {
         navigate("/admin");
       }
     } else {
-      SwalAlert("error", msg);
+      SwalAlert("error", "Usuario o contraseña incorrectos, vuelva a intentarlo");
     }
   };
 
@@ -79,7 +79,7 @@ export const Login = () => {
                 </div>
                 <div className="mb-4">
                   <label className="form-label" htmlFor="password">
-                    Password
+                    Contraseña
                   </label>
                   <input
                     className="form-control"

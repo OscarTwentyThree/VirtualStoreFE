@@ -26,7 +26,7 @@ export const CustomerProfile = () => {
             <h2 className='mb-5 display-5' style={{marginLeft:"450px"}}>Opciones de usuario</h2>
             <div className='row' >
                     <div className='col'>
-                        <MenuCard title={'1.Gestionar informacion personal'} link={'/customer/profile/edit_info'} fondo={personalInfoicon}/>
+                        <MenuCard title={'1.Gestionar información personal'} link={'/customer/profile/edit_info'} fondo={personalInfoicon}/>
                     </div>
                     <div className='col'>
                         <MenuCard title={'2.Gestionar pedidos'} link={'/customer/profile/bill_management'} fondo={billIcon}/>

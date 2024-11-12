@@ -208,6 +208,24 @@ export const InitialPage = () => {
     return;
   };
 
+  const displayMsg = () => {
+    if (products.length == 0) {
+      return (
+        <div>
+          <label
+            style={{
+              marginLeft: "460px",
+              fontSize: "25px",
+              fontWeight: "bold",
+            }}
+          >
+            No hay productos disponibles
+          </label>
+        </div>
+      );
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -371,7 +389,7 @@ export const InitialPage = () => {
                             <td>{product.name}</td>
                             <td>{product.brand}</td>
                             <td>{product.size}</td>
-                            <td>{product.unitPrice}</td>
+                            <td>{'₡' + product.unitPrice}</td>
                             <td>
                               <button
                                 className="btn btn-success"
@@ -384,6 +402,7 @@ export const InitialPage = () => {
                         ))}
                     </tbody>
                   </table>
+                  {displayMsg()}
                 </div>
               </div>
             </div>

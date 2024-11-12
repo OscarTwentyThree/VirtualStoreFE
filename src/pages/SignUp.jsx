@@ -47,14 +47,15 @@ export const SignUp = () => {
       return;
     }
     if (password == passwordConfirm && validPassword.test(password)) {
-      const { error } = await signUp(id, password,firstName, lastName,email,phoneNumber);
+      const { error, msg} = await signUp(id, password,firstName, lastName,email,phoneNumber);
       setError(error);
+      setMessage(msg);
     }
     if (!error) {
       SwalAlert("success", "Usuario registrado correctamente");
       reset();
     } else {
-      SwalAlert("error", "Error al registrar usuario");
+      SwalAlert("error", message);
     }
     
   };
@@ -150,7 +151,7 @@ export const SignUp = () => {
                 </div>
                 <div className="mb-4">
                   <label className="form-label" htmlFor="password">
-                    Password
+                    Contraseña
                   </label>
                   <input
                     className="form-control"
@@ -164,7 +165,7 @@ export const SignUp = () => {
                 </div>
                 <div className="mb-4">
                   <label className="form-label" htmlFor="password">
-                    Password
+                    Confirmar Contraseña
                   </label>
                   <input
                     className="form-control"
@@ -185,7 +186,6 @@ export const SignUp = () => {
                   />
                 </div>
                 <div className="mt-4">
-                  {error ? <ErrorAlert text={message} /> : null}
                 </div>
               </form>
             </div>
@@ -197,3 +197,5 @@ export const SignUp = () => {
     </div>
   );
 };
+
+//{error ? <ErrorAlert text={message} /> : null}

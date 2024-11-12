@@ -228,7 +228,7 @@ export const ProductDetail = ({}) => {
                       Precio por unidad:
                     </div>
                     <div style={{ backgroundColor: "#c4c4c4" }} className="col">
-                      {product.unitPrice}
+                      {'₡' + product.unitPrice}
                     </div>
                     <div className="w-200"></div>
                     <div

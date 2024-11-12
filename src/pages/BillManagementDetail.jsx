@@ -29,7 +29,7 @@ export const BillManagmentDetail = () => {
     if (action == 1) {
       SwalAlertWithConfirm(
         "warning",
-        "¿Está Seguro de confirmar la entrega de su pedido?",
+        "¿Está seguro de confirmar la entrega de su pedido?",
         "Si",
         "Cancelar"
       ).then(async (result) => {
@@ -57,7 +57,7 @@ export const BillManagmentDetail = () => {
     if (action == 2) {
       SwalAlertWithConfirm(
         "warning",
-        "¿Está Seguro de cancelar su pedido?",
+        "¿Está seguro de cancelar su pedido?",
         "Si",
         "Cancelar"
       ).then(async (result) => {
@@ -103,7 +103,7 @@ export const BillManagmentDetail = () => {
     if (action == 3) {
       SwalAlertWithConfirm(
         "warning",
-        "¿Está seguro solicitar la devolucion de su pedido ?",
+        "¿Está seguro solicitar la devolución de su pedido ?",
         "Si",
         "Cancelar"
       ).then(async (result) => {
@@ -125,7 +125,7 @@ export const BillManagmentDetail = () => {
           );
           navigate("/customer/profile");
         } else {
-          SwalAlert("error", "Error al cancelar el pedido");
+          SwalAlert("error", "Error al solicitar la devolución");
           return;
         }
       });
@@ -276,7 +276,7 @@ export const BillManagmentDetail = () => {
             <div className="row">
               <div className="col">
                 <label style={{ marginLeft: "360px", fontSize: "20px" }}>
-                  La devolucion ha sido rechazada, no hay acciones disponibles.
+                  La devolución ha sido rechazada, no hay acciones disponibles.
                 </label>
               </div>
               <br />
@@ -363,7 +363,7 @@ export const BillManagmentDetail = () => {
                             backgroundColor: " #3aacb0 ",
                           }}
                         >
-                          Subtotal
+                          Total
                         </th>
                       </tr>
                     </thead>
@@ -381,7 +381,7 @@ export const BillManagmentDetail = () => {
                             <td>{order.product.name}</td>
                             <td>{order.product.brand}</td>
                             <td>{order.quantity}</td>
-                            <td>{order.amount}</td>
+                            <td>{'₡' +order.amount}</td>
                           </tr>
                         ))}
                     </tbody>
@@ -402,7 +402,7 @@ export const BillManagmentDetail = () => {
                           }}
                         >
                           SubTotal:
-                          {" " + bill.subtotal}
+                          {" " +'₡' + bill.subtotal}
                         </label>
                         <br />
                         <label
@@ -413,7 +413,7 @@ export const BillManagmentDetail = () => {
                             paddingTop: "10px",
                           }}
                         >
-                          IVA:{" " + bill.tax}
+                          IVA:{" " +'₡' + bill.tax}
                         </label>
                         <br />
                         <label
@@ -424,7 +424,7 @@ export const BillManagmentDetail = () => {
                             paddingTop: "10px",
                           }}
                         >
-                          Total:{" " + bill.total}
+                          Total:{" " +'₡' + bill.total}
                         </label>
                         <br />
                       </div>
@@ -443,7 +443,7 @@ export const BillManagmentDetail = () => {
                             fontWeight: "bold",
                           }}
                         >
-                          Detalles de envio
+                          Detalles de envío
                         </label>
                         <br />
                         <br />

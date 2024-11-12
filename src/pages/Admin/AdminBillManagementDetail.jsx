@@ -383,7 +383,7 @@ export const AdminBillManagmentDetail = () => {
                             <td>{order.product.name}</td>
                             <td>{order.product.brand}</td>
                             <td>{order.quantity}</td>
-                            <td>{order.amount}</td>
+                            <td>{'₡' + order.amount}</td>
                           </tr>
                         ))}
                     </tbody>
@@ -404,7 +404,7 @@ export const AdminBillManagmentDetail = () => {
                           }}
                         >
                           SubTotal:
-                          {" " + bill.subtotal}
+                          {" " + '₡' + bill.subtotal}
                         </label>
                         <br />
                         <label
@@ -415,7 +415,7 @@ export const AdminBillManagmentDetail = () => {
                             paddingTop: "10px",
                           }}
                         >
-                          IVA:{" " + bill.tax}
+                          IVA:{" " + '₡' + bill.tax}
                         </label>
                         <br />
                         <label
@@ -426,7 +426,7 @@ export const AdminBillManagmentDetail = () => {
                             paddingTop: "10px",
                           }}
                         >
-                          Total:{" " + bill.total}
+                          Total:{" " + '₡' + bill.total}
                         </label>
                         <br />
                       </div>

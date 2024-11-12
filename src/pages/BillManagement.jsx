@@ -36,6 +36,24 @@ export const BillManagment = () => {
     navigate(`bill_detail`, { state: { bill } });
   };
 
+  const displayMsg = () => {
+    if (bills.length == 0) {
+      return (
+        <div>
+          <label
+            style={{
+              marginLeft: "430px",
+              fontSize: "25px",
+              fontWeight: "bold",
+            }}
+          >
+            No tienes pedidos para gestionar
+          </label>
+        </div>
+      );
+    }
+  };
+
   return (
     <>
       <CustomerNavBar />
@@ -66,7 +84,7 @@ export const BillManagment = () => {
                             backgroundColor: " #3aacb0 ",
                           }}
                         >
-                          Numero de factura
+                          Número de factura
                         </th>
                         <th
                           style={{
@@ -90,7 +108,7 @@ export const BillManagment = () => {
                             backgroundColor: " #3aacb0 ",
                           }}
                         >
-                          Metodo de pago
+                          Método de pago
                         </th>
                         <th
                           style={{
@@ -116,7 +134,7 @@ export const BillManagment = () => {
                           <tr key={bill.id}>
                             <td>{bill.id}</td>
                             <td>{convertDate(bill.date)}</td>
-                            <td>{bill.total}</td>
+                            <td>{'₡' +bill.total}</td>
                             <td>{bill.paymentMethod.name}</td>
                             <td>{bill.status.name}</td>
                             <td>
@@ -131,6 +149,8 @@ export const BillManagment = () => {
                         ))}
                     </tbody>
                   </table>
+                  {displayMsg()}
+                  <br />
                   <div>
                     <button
                       className="btn btn-primary" style={{marginLeft: "575px"}}

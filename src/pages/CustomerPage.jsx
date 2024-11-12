@@ -210,6 +210,24 @@ export const CustomerPage = () => {
     }
   };
 
+  const displayMsg = () => {
+    if (products.length == 0) {
+      return (
+        <div>
+          <label
+            style={{
+              marginLeft: "460px",
+              fontSize: "25px",
+              fontWeight: "bold",
+            }}
+          >
+            No hay productos disponibles
+          </label>
+        </div>
+      );
+    }
+  };
+
   return (
     <>
       <CustomerNavBar />
@@ -374,7 +392,7 @@ export const CustomerPage = () => {
                             <td>{product.name}</td>
                             <td>{product.brand}</td>
                             <td>{product.size}</td>
-                            <td>{product.unitPrice}</td>
+                            <td>{'₡' + product.unitPrice}</td>
                             <td>
                               <button
                                 className="btn btn-success"
@@ -387,6 +405,7 @@ export const CustomerPage = () => {
                         ))}
                     </tbody>
                   </table>
+                  {displayMsg()}
                 </div>
               </div>
             </div>

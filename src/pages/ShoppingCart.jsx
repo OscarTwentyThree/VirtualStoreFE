@@ -50,7 +50,7 @@ export const ShoppingCart = () => {
   const handleClickBilling = () => {
     SwalAlertWithConfirm(
       "warning",
-      "¿Está seguro de ir a facturación?",
+      "¿Está seguro de ir a la facturación?",
       "Si",
       "Cancelar"
     ).then((result) => {
@@ -134,7 +134,7 @@ export const ShoppingCart = () => {
   const editQuantity = (i) => {
     SwalAlertWithConfirm(
       "warning",
-      "¿Está de cambiar la cantidad de la orden?",
+      "¿Está de seguro cambiar la cantidad de la orden?",
       "Si",
       "Cancelar"
     ).then((result) => {
@@ -260,7 +260,7 @@ export const ShoppingCart = () => {
                             backgroundColor: " #3aacb0 ",
                           }}
                         >
-                          Subtotal
+                          Total
                         </th>
                         <th
                           style={{
@@ -294,7 +294,7 @@ export const ShoppingCart = () => {
                             <td>{order.product.name}</td>
                             <td>{order.product.brand}</td>
                             {displayinput(order)}
-                            <td>{order.amount}</td>
+                            <td>{'₡' + order.amount}</td>
                             <td>{displayEditOrConfirm()}</td>
                             <td>
                               <button

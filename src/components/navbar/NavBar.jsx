@@ -55,13 +55,13 @@ export const Navbar = () => {
         </div>
         <div className="d-flex">
           <Link to="/login" className="btn btn-light">
-            Login
+            Iniciar sesión
           </Link>
           <div style={{ padding: "6px" }} className="d-flex justify-content-left">
-          <label htmlFor=""> or </label>
+          <label htmlFor=""> o </label>
           </div>
           <Link to="/signup" className="btn btn-light">
-            Sign Up
+            Registrarse
           </Link>
         </div>
       </div>

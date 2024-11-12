@@ -35,6 +35,23 @@ export const AdminBillManagment = () => {
     navigate(`bill_detail`, { state: { bill } });
   };
 
+  const displayMsg = () => {
+    if (bills.length == 0) {
+      return (
+        <div>
+          <label
+            style={{
+              marginLeft: "450px",
+              fontSize: "25px",
+              fontWeight: "bold",
+            }}
+          >
+            No hay pedidos para gestionar
+          </label>
+        </div>
+      );
+    }
+  };
   return (
     <>
       <AdminNavBar />
@@ -124,7 +141,7 @@ export const AdminBillManagment = () => {
                             <td>{bill.id}</td>
                             <td>{bill.user.email}</td>
                             <td>{convertDate(bill.date)}</td>
-                            <td>{bill.total}</td>
+                            <td>{'₡' + bill.total}</td>
                             <td>{bill.paymentMethod.name}</td>
                             <td>{bill.status.name}</td>
                             <td>
@@ -139,6 +156,8 @@ export const AdminBillManagment = () => {
                         ))}
                     </tbody>
                   </table>
+                  {displayMsg()}
+                  <br />
                   <div>
                     <button
                       className="btn btn-primary"

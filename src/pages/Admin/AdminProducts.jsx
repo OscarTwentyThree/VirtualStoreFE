@@ -255,6 +255,24 @@ export const AdminProducts = () => {
     return;
   };
 
+  const displayMsg = () => {
+    if (products.length == 0) {
+      return (
+        <div>
+          <label
+            style={{
+              marginLeft: "460px",
+              fontSize: "25px",
+              fontWeight: "bold",
+            }}
+          >
+            No hay productos disponibles
+          </label>
+        </div>
+      );
+    }
+  };
+
   return (
     <>
       <AdminNavBar />
@@ -477,7 +495,7 @@ export const AdminProducts = () => {
                             <td>{product.brand}</td>
                             <td>{product.stock}</td>
                             <td>{product.size}</td>
-                            <td>{product.unitPrice}</td>
+                            <td>{'₡' + product.unitPrice}</td>
                             <td>{product.category.name}</td>
                             <td>{product.subCategory.name}</td>
 
@@ -501,6 +519,7 @@ export const AdminProducts = () => {
                         ))}
                     </tbody>
                   </table>
+                  {displayMsg()}
                 </div>
               </div>
             </div>

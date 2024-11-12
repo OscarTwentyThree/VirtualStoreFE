@@ -137,6 +137,7 @@ export const AddProducts = () => {
                   value={name}
                   name="name"
                   className="form-control"
+                  placeholder="Nombre"
                   onChange={handleInputChange}
                 />
               </div>
@@ -146,6 +147,7 @@ export const AddProducts = () => {
                   type="text"
                   value={brand}
                   name="brand"
+                  placeholder="Marca"
                   className="form-control"
                   onChange={handleInputChange}
                 />
@@ -156,6 +158,7 @@ export const AddProducts = () => {
                   type="text"
                   value={description}
                   name="description"
+                  placeholder="Descripción"
                   className="form-control"
                   onChange={handleInputChange}
                 />
@@ -166,6 +169,7 @@ export const AddProducts = () => {
                   type="number"
                   value={stock}
                   name="stock"
+                  placeholder="Cantidad"
                   className="form-control"
                   onChange={handleInputChange}
                 />
@@ -176,6 +180,7 @@ export const AddProducts = () => {
                   type="number"
                   step="0.01"
                   value={unitPrice}
+                  placeholder="Precio por unidad"
                   name="unitPrice"
                   className="form-control"
                   onChange={handleInputChange}
@@ -186,6 +191,7 @@ export const AddProducts = () => {
                 <input
                   type="text"
                   value={size}
+                  placeholder="Talla"
                   name="size"
                   className="form-control"
                   onChange={handleInputChange}
@@ -240,7 +246,7 @@ export const AddProducts = () => {
               </div>
 
               <button type="submit" className="btn mt-3" style={{backgroundColor:"#3aacb0",color:"white"}}>
-                Subir Archivo
+                Añadir producto
               </button>
             </form>
           </div>

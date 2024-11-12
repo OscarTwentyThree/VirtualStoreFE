@@ -22,7 +22,7 @@ export const Admin = () => {
         <div className="row">
           <div className="col">
             <MenuCard
-              title={"1.Gestionar informacion personal"}
+              title={"1.Gestionar información personal"}
               link={"/admin/profile"}
               fondo={personalInfoicon}
             />

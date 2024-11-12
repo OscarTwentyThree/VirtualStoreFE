@@ -53,7 +53,7 @@ export const BillingPage = () => {
     }
 
     if (paymentMethod == null) {
-      SwalAlert("error", "Seleccione un metodo de pago");
+      SwalAlert("error", "Seleccione un método de pago");
       return;
     }
     if (paymentMethod != 1) {
@@ -87,7 +87,7 @@ export const BillingPage = () => {
 
     SwalAlertWithConfirm(
       "warning",
-      "¿Está Seguro de confirmar la compra?",
+      "¿Está seguro de confirmar la compra?",
       "Si",
       "Cancelar"
     ).then(async (result) => {
@@ -178,13 +178,13 @@ export const BillingPage = () => {
                 className="mb-4"
               >
                 <label className="form-label" htmlFor="text">
-                  Numero de tarjeta
+                  Número de tarjeta
                 </label>
                 <input
                   className="form-control"
                   name="cardNumber"
                   type="text"
-                  placeholder="Numero de tarjeta"
+                  placeholder="Número de tarjeta"
                   value={cardNumber}
                   onChange={handleInputChange}
                   required
@@ -235,13 +235,13 @@ export const BillingPage = () => {
         <div className="container">
           <div className="row">
             <div className="col">
-              <label style={{ marginLeft: "500px", fontSize: "20px" }}>Numero de referencia: <label style={{color:"red"}}>{getRandomIntInclusive(700000, 2000000)}</label>
+              <label style={{ marginLeft: "500px", fontSize: "20px" }}>Número de referencia: <label style={{color:"red"}}>{getRandomIntInclusive(700000, 2000000)}</label>
               </label>
               <label style={{ marginLeft: "225px", fontSize: "20px" }}>
-                Favor Realizar el pago sl numero (+506) 8888-8888 y adjuntar el numero anterior en el detalle.
+                Favor Realizar el pago sl numero (+506) 8888-8888 y adjuntar el número anterior en el detalle.
               </label>
               <label style={{ marginLeft: "350px", fontSize: "20px" }}>
-                Una vez verificado el pago se procedera a realizar el envio.
+                Una vez verificado el pago se procedera a realizar el envío.
               </label>
             </div>
             <br />
@@ -360,7 +360,7 @@ export const BillingPage = () => {
                             backgroundColor: " #3aacb0 ",
                           }}
                         >
-                          Subtotal
+                          Total
                         </th>
                       </tr>
                     </thead>
@@ -378,7 +378,7 @@ export const BillingPage = () => {
                             <td>{order.product.name}</td>
                             <td>{order.product.brand}</td>
                             <td>{order.quantity}</td>
-                            <td>{order.amount}</td>
+                            <td>{'₡' + order.amount}</td>
                           </tr>
                         ))}
                     </tbody>
@@ -392,14 +392,14 @@ export const BillingPage = () => {
                       >
                         <label
                           style={{
-                            paddingLeft: "350px",
+                            paddingLeft: "330px",
                             fontSize: "20px",
                             fontWeight: "bold",
                             paddingTop: "10px",
                           }}
                         >
-                          SubTotal:{" "}
-                          {parseFloat(
+                          Subtotal:{" "}
+                          {'₡' + parseFloat(
                             orders.reduce(
                               (acc, order) => acc + order.amount,
                               0
@@ -415,14 +415,14 @@ export const BillingPage = () => {
                         <br />
                         <label
                           style={{
-                            paddingLeft: "350px",
+                            paddingLeft: "330px",
                             fontSize: "20px",
                             fontWeight: "bold",
                             paddingTop: "10px",
                           }}
                         >
                           IVA:{" "}
-                          {parseFloat(
+                          {'₡' + parseFloat(
                             orders.reduce(
                               (acc, order) => acc + order.amount,
                               0
@@ -432,14 +432,14 @@ export const BillingPage = () => {
                         <br />
                         <label
                           style={{
-                            paddingLeft: "350px",
+                            paddingLeft: "330px",
                             fontSize: "20px",
                             fontWeight: "bold",
                             paddingTop: "10px",
                           }}
                         >
                           Total:{" "}
-                          {orders.reduce((acc, order) => acc + order.amount, 0)}
+                          {'₡' + orders.reduce((acc, order) => acc + order.amount, 0)}
                         </label>
                         <br />
                       </div>
@@ -456,7 +456,7 @@ export const BillingPage = () => {
                             fontWeight: "bold",
                           }}
                         >
-                          Seleccione el metodo de pago
+                          Seleccione el método de pago
                         </label>
                         <br />
                         <div value={paymentMethod} onChange={handleInputChange}>
@@ -482,7 +482,7 @@ export const BillingPage = () => {
                   style={{ marginLeft: "150px", marginRight: "150px" }}
                   className="col mt-5 bg-light rounded shadow"
                 >
-                  <h2 className="fw-bold text-center">Información de envio</h2>
+                  <h2 className="fw-bold text-center">Información de envío</h2>
                   <div className="">
                     <form>
                       <div
